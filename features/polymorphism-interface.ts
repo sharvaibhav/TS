@@ -21,16 +21,9 @@ class Ford implements Car {
   };
 }
 
-class System {
-  myCar: Car;
-  carMap: { [index: string]: Car } = {
-    vaibhav: new Ford(),
-    saurabh: new Mg()
-  };
-  constructor(objectType: string) {
-    this.myCar = this.carMap[objectType];
-    this.myCar.drives(52);
-  }
-}
+const carMapper: { [key: string]: Car } = {
+  vaibhav: new Ford(),
+  saurabh: new Mg()
+};
 
-const system = new System("saurabh");
+const myCar: Car = carMapper["vaibhav"];
